@@ -1,9 +1,3 @@
-Aqui está um modelo completo e estruturado de **README.md** para o seu projeto de extensão da UNIP. Ele segue o padrão exigido no meio acadêmico e técnico, mantendo foco na utilidade prática, responsabilidade individual e no impacto real para as famílias e cuidadores.
-
----
-
-# README.md
-
 # Sistema de Monitoramento de Medicamentos para Idosos (SMMI)
 
 > **Projeto Aplicado de Extensão Universitária — Universidade Paulista (UNIP)**
