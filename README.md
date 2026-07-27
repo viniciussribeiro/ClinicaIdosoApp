@@ -1,45 +1,86 @@
-# Carinhosos — aplicativo Android
+# Carinhosos — Sistema de Monitoramento de Medicamentos para Idosos
 
-Aplicativo Android nativo em Kotlin e Jetpack Compose para acompanhamento de
-residentes de uma clínica de cuidados para idosos.
+> **Projeto Aplicado de Extensão Universitária — Universidade Paulista (UNIP)**
 
-## Funcionalidades
+Aplicativo Android nativo para auxiliar cuidadores no acompanhamento de idosos,
+medicamentos, aplicações e estoque. O projeto busca reduzir esquecimentos,
+duplicidades e interrupções de tratamento por falta de medicamentos.
 
-- Login com a credencial definida para o projeto
-- Sessão persistente: o login é mantido até o usuário escolher sair
-- Painel com resumo de residentes, pendências e busca por nome
-- Cadastro de idosos, responsável e medicamentos
-- Foto de perfil escolhida na galeria e exibida no painel e na ficha
-- Ficha individual com medicamentos e registro de doses aplicadas no dia
-- Inclusão, edição e remoção de medicamentos na ficha do residente
-- Alteração da data de início e do horário de cada medicamento
-- Medicamento selecionado diretamente do estoque
-- Baixa automática de uma unidade do estoque ao registrar a aplicação
-- Bloqueio da aplicação quando o medicamento está zerado ou ausente
-- Histórico de doses aplicadas com data e horário
-- Tratamentos diários renovados automaticamente no dia seguinte
-- Suporte a tratamento diário ou dose única
-- Validação detalhada dos campos de medicamento, data e horário
-- Área de notificações com controle geral e lembrete individual
-- Notificações diárias com nome do idoso, medicamento e horário
-- Estoque com quantidade mínima, alerta de nível baixo e ajuste de unidades
-- Banco de dados SQLite local, persistido mesmo após fechar o aplicativo
+## Tecnologias
 
-## Abrir e executar
+- Kotlin
+- Jetpack Compose
+- SQLite
+- AlarmManager e notificações nativas do Android
+- Gradle
 
-1. Abra esta pasta no Android Studio.
-2. Aguarde a sincronização do projeto.
-3. Selecione um emulador ou aparelho Android.
-4. Execute o módulo `app`.
+## Funcionalidades implementadas
 
-O APK de demonstração também está disponível em
-`Carinhosos-v1.3.1.apk`.
+- Login e sessão persistente
+- Painel com resumo, pendências e busca de residentes
+- Cadastro de idosos, responsáveis e fotos de perfil
+- Inclusão, edição e remoção de medicamentos
+- Tratamento diário ou dose única
+- Alteração da data inicial e do horário
+- Notificações com nome do idoso, medicamento e horário
+- Configuração geral e individual dos lembretes
+- Histórico de doses aplicadas com data e hora
+- Renovação automática dos medicamentos diários
+- Estoque com quantidade mínima e alerta de nível baixo
+- Seleção do medicamento diretamente do estoque
+- Baixa de uma unidade ao registrar cada aplicação
+- Bloqueio da aplicação quando o item está ausente ou zerado
+- Validação detalhada dos campos obrigatórios, datas e horários
+- Persistência local em banco de dados SQLite
 
-## Requisitos
+## Executar o projeto
 
-- Android 7.0 ou posterior
-- Android Studio com SDK 36
+### Requisitos
+
+- Android Studio
+- Android SDK 36
 - JDK 17 ou posterior
+- Android 7.0 ou posterior no emulador ou aparelho
 
-> Este projeto mantém os dados somente no aparelho. Para uso simultâneo em
-> vários celulares, é necessário conectar um serviço de sincronização.
+### Passos
+
+1. Clone o repositório:
+
+   ```bash
+   git clone git@github.com:viniciussribeiro/ClinicaIdosoApp.git
+   ```
+
+2. Abra a pasta clonada no Android Studio.
+3. Aguarde a sincronização do Gradle.
+4. Selecione um emulador ou aparelho Android.
+5. Execute o módulo `app`.
+
+Para compilar pelo terminal no Windows:
+
+```powershell
+.\gradlew.bat assembleDebug
+```
+
+O APK será criado em `app/build/outputs/apk/debug/app-debug.apk`.
+
+## Arquitetura
+
+1. **Interface:** telas nativas construídas com Jetpack Compose.
+2. **Banco local:** SQLite para idosos, medicamentos, histórico, estoque e
+   configurações.
+3. **Notificações:** alarmes diários restaurados após a reinicialização do
+   aparelho.
+
+O SQLite mantém os dados somente no aparelho. Sincronização entre vários
+celulares exigirá um serviço remoto em uma etapa futura.
+
+## Informações acadêmicas
+
+- **Instituição:** Universidade Paulista (UNIP)
+- **Curso:** Ciência da Computação
+- **Disciplina:** Projeto de Extensão Universitária
+- **Semestre/Ano:** 2026
+
+## Licença
+
+Projeto desenvolvido para fins acadêmicos e sociais.
